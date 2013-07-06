@@ -9,7 +9,7 @@ describe "Hash" do
 
     # change the assertion to true
     it "tests logic" do
-      assert false
+      assert true
     end
 
     # assign to `value` variable
@@ -17,6 +17,7 @@ describe "Hash" do
       value = ""
       hash = {:name => "richard"}
       # put your code here
+        value = hash[:name]
       assert_equal "richard", value
     end
 
@@ -24,6 +25,8 @@ describe "Hash" do
     it "add an element to a hash" do
       hash = {:name => "richard"}
       # put your code here
+        hash.store :movie, 'zoolander'
+        #hash[:movie] = 'zoolander'
       assert_equal({:name => "richard", :movie => 'zoolander'}, hash)
     end
 
@@ -32,6 +35,7 @@ describe "Hash" do
       keys = []
       hash = {:name => "richard", :movie => 'zoolander'}
       # put your code here
+        keys = hash.keys
       assert_equal [:name, :movie], keys
     end
 
@@ -40,6 +44,7 @@ describe "Hash" do
       values = []
       hash = {:name => "richard", :movie => 'zoolander'}
       # put your code here
+        values = hash.values
       assert_equal ["richard", "zoolander"], values
     end
 
@@ -47,6 +52,7 @@ describe "Hash" do
     it "removes a key value pair from a hash" do
       hash = {:name => "richard", :movie => 'zoolander'}
       # put your code here
+        hash.delete :movie
       assert_equal({:name => "richard"}, hash)
     end
 
@@ -56,6 +62,7 @@ describe "Hash" do
       hash        = {:name => "richard"}
       second_hash = {:movie => 'zoolander'}
       # put your code here
+        hash.merge! second_hash
       assert_equal({:name => "richard", :movie => 'zoolander'}, hash)
     end
 
@@ -71,6 +78,7 @@ describe "Hash" do
     hash = {}
     array = [["name", "richard"], ["movie", "zoolander"]]
     # put your code here
+      hash = array.each_with_object({}) { |i, h| h[i[0]] = i[1] }
     assert_equal({"name"=>"richard", "movie"=>"zoolander"}, hash)
     end
   end
