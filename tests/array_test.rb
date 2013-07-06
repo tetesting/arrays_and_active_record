@@ -9,7 +9,7 @@ class ArrayTest < Test::Unit::TestCase
   def test_reject
     array = [1,2,3,4,5,6,7,8]
     # put your code here
-      array = array.reject { |num| num.even? }
+      array = array.reject { |num| num.even? }  # or Array#delete_if
     assert_equal [1,3,5,7], array
   end
 
@@ -18,6 +18,11 @@ class ArrayTest < Test::Unit::TestCase
   def test_first_three
     array = [1,2,3,4,5]
     # put your code here
+      array = array[0,3]  # refer to Array#slice
+    assert_equal [1,2,3], array
+  end
+  def test_first_three_2
+    array = [1,2,3,4,5]
       array = array[0..2]
     assert_equal [1,2,3], array
   end
@@ -27,6 +32,12 @@ class ArrayTest < Test::Unit::TestCase
     array = [1,2,3,4,5]
     # put your code here
       array = array[array.length-3,3]
+    assert_equal [3,4,5], array
+  end
+  def test_last_three_2
+    array = [1,2,3,4,5]
+      array_len = array.length
+      array = array[array_len-3...array_len]
     assert_equal [3,4,5], array
   end
 
@@ -86,6 +97,13 @@ class ArrayTest < Test::Unit::TestCase
     array_one = [1,2,3,4,5]
     array_two = [6,7,8,9,10]
     # put your code here
+      array = array_one + array_two
+    assert_equal [1,2,3,4,5,6,7,8,9,10], array
+  end
+  def test_concat_arrays_2
+    array = []
+    array_one = [1,2,3,4,5]
+    array_two = [6,7,8,9,10]
       array = array_one.concat array_two
     assert_equal [1,2,3,4,5,6,7,8,9,10], array
   end
@@ -106,7 +124,7 @@ class ArrayTest < Test::Unit::TestCase
 
   # Find all elements that exist in array_one but are not present in array_two
   # Use the Difference operator
-  def test_difference_btwn_one_and_two
+  def test_difference_two_from_one
     array = []
     array_one = [1,2,3,4,5]
     array_two = [2,5,9]
@@ -118,7 +136,7 @@ class ArrayTest < Test::Unit::TestCase
   # Like the last but the opposite,
   # Find all elements that exist in array_two but are not present in array_one
   # Use the Difference operator
-  def test_difference_btwn_two_and_one
+  def test_difference_one_from_two
     array = []
     array_one = [1,2,3,4,5]
     array_two = [2,5,9]
@@ -152,7 +170,7 @@ class ArrayTest < Test::Unit::TestCase
     num_of_elem = nil
     array = [1,2,3,4]
     # put your code here
-      num_of_elem = array.length
+      num_of_elem = array.count  # or Array#length or Array#size
     assert_equal 4, num_of_elem
   end
 
