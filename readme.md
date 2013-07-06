@@ -178,7 +178,7 @@ Hopefully by now you shouldn't feel completely intimidated by the docs. Answer a
 > Direct Link to `String#upcase` docs:
 
 
-Head back to the `Array` docs and then you'll start fixing the rest of the tests. In addition to `assert` and `assert_equal` there are a number of different assertion statements we can use. Since our test class inherits from `Test::Unit::TestCase` we can look at those docs. From there you'll see that we include a module called `Test::Unit::Assertions` here you'll find quite a few assertions we could have used http://www.ruby-doc.org/stdlib-1.9.3/libdoc/tests/unit/rdoc/tests/Unit/Assertions.html.
+Head back to the `Array` docs and then you'll start fixing the rest of the tests. In addition to `assert` and `assert_equal` there are a number of different assertion statements we can use. Since our test class inherits from `Test::Unit::TestCase` we can look at those docs. From there you'll see that we include a module called `Test::Unit::Assertions` here you'll find quite a few assertions we could have used http://www.ruby-doc.org/stdlib-1.9.3/libdoc/test/unit/rdoc/Test/Unit/Assertions.html.
 
 Go through the rest of the methods in the `tests/array_test.rb`. Switch between writing code and looking up docs. Once you get a test to pass, move on to the next until all are passing. There are comments above each method that should help you complete your task.
 
